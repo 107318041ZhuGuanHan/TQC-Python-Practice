@@ -14,3 +14,5 @@ elif string.isspace(): # 判斷是否為空格
 
 else:
     print(string + " is a symbol.其他符號")
+
+# ★這裡的判斷可以記一下有這些東西

@@ -10,6 +10,8 @@ if number_a % 2 != 0: # 怕有人給我輸入奇數
 if number_b % 2 != 0: # 怕有人給我輸入奇數
     number_b = number_b - 1 # 變成在範圍內的最大偶數
 
+# 參考答案在這裡是直接在迴圈裡面判斷是不是2的倍數，是的話才進行加總
+
 for n in range(number_a, number_b+1, 2):
     number += n
 

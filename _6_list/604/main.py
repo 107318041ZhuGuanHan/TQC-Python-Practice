@@ -29,6 +29,8 @@ for number in numbers:
     if max_count < numbers.count(number): # 判斷每個元素的數量是否大於目前的眾數數量
         max_count = numbers.count(number) # ★更新現在眾數的數量(只要此變數看到更大的數就會一直更新到跟他看到的數字一樣)
         much_number = number # 更新眾數
+        # 有些時候不能用變數來儲存，這邊可以是因為index的數值都 >= 0(初始值)
+        # 遇到要儲存任意數的list就很容易讓初始值變成不是最大或最小值了
 
 
 print("眾數 = " + str(much_number))

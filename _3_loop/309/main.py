@@ -6,5 +6,5 @@ print("Month  Amount")
 
 for mon in range(1, month+1):
     money = money + money * benefit_rate / 1200 # %數 / 100 -> 1年12個月 -> %數 / 1200
-    # 上面也可以打成: money += money * benefit_rate
+    # 上面也可以打成: money += money * benefit_rate / 1200
     print("%3d    %.2f" % (mon, money))

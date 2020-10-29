@@ -27,5 +27,5 @@ if v_nami > v_chopper:  # 不是Nami贏
 elif v_chopper > v_nami:  # 就是Chopper贏
     print("No.2 Chopper won the election.")
 
-elif v_nami == v_chopper:  # 要不然騎士就是平手
+elif v_nami == v_chopper:  # 要不然其實就是平手
     print("No one won the election.")

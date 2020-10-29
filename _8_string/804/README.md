@@ -17,11 +17,12 @@
 ### 範例輸入
 
 ```
-
+learning python is funny
 ```
 
 ### 範例輸出
 
 ```
-
+LEARNING PYTHON IS FUNNY
+Learning Python Is Funny
 ```

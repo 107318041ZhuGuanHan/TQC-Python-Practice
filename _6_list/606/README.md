@@ -48,3 +48,5 @@ https://sites.google.com/site/zsgititit/home/python-cheng-shi-she-ji/yi-wei-zhen
 ![](../../img/2020-10-26-13-39-57.png)
 ![](../../img/2020-10-26-13-40-26.png)
 ![](../../img/2020-10-26-13-40-37.png)
+
+https://www.delftstack.com/zh-tw/howto/python/how-to-initiate-2-d-array-in-python/

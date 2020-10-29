@@ -24,10 +24,15 @@ X組和Y組彼此沒有的科目（不包含相同科目）
 Enter group X's subjects:
 ```
 Math
+
 Literature
+
 English
+
 History
+
 Geography
+
 end
 
 
@@ -35,10 +40,15 @@ end
 Enter group Y's subjects:
 ```
 Math
+
 Literature
+
 Chinese
+
 Physical
+
 Chemistry
+
 end
 ```
 ['Chemistry', 'Chinese', 'English', 'Geography', 'History', 'Literature', 'Math', 'Physical']
@@ -46,3 +56,5 @@ end
 ['Chemistry', 'Chinese', 'Physical']
 ['Chemistry', 'Chinese', 'English', 'Geography', 'History', 'Physical']
 ```
+
+可以去看705的README，有很多資料

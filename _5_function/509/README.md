@@ -44,3 +44,4 @@ http://www.mathland.idv.tw/fun/euclidean.htm
 ![](../../img/2020-10-29-14-59-04.png)
 
 輾轉相除法樹狀圖：
+![](../../img/2020-10-30-09-04-51.png)

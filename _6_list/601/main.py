@@ -7,7 +7,7 @@ for i in range(1, 13): # 讓user輸入12個數字
 
 
 ans = 0
-for n in range(0, len(numbers), 2): # 從number[0]開始，一直到number的最後一項，n每次+2list
+for n in range(0, len(numbers), 2): # 從number[0]開始，一直到number的最後一項，n每次+2
     ans += numbers[n]               # list的index: 0 ~ len(numbers)-1
     # 計算index為偶數的元素總和
     # 參考答案是印出每個元素跟加總合在一個迴圈，這邊是分開

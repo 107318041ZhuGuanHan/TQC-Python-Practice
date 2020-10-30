@@ -339,3 +339,175 @@ def face_list(number):
 num = int(input("請輸入一個正整數: "))
 
 face_list(num)
+# ----------------------------------------------------------------------
+# 604
+numbers = []
+
+print("請輸入10個整數，我將為您輸出這10個整數之中的眾數: ")
+for n in range(1, 11):
+    numbers.append(int(input("請輸入第%d個整數: " % n)))
+
+max_number = 0  # 眾數數值
+max_time = 0    # 眾數的出現次數
+for number in numbers:
+
+    if max_time < numbers.count(number):
+        max_time = numbers.count(number)
+        max_number = number
+
+print("眾數: " + str(max_number))
+print("總共出現了 " + str(max_time) + " 次。")
+# ----------------------------------------------------------------------
+# 606-2維list
+def compute(num_list):
+
+    for rows in num_list:
+
+        for cols in rows:
+            print("%4d" % cols, end='')
+
+        print("")
+
+
+row = int(input("請輸入您要的二維list有多少列: "))
+column = int(input("請輸入您要的二維list有多少行: "))
+
+numbers = []
+
+for r in range(0, row):
+
+    numbers.append([])
+    for c in range(0, column):
+        numbers[r].append(c-r)  # numbers[r]的[r]記得要打，不然裡面是1D list
+
+compute(num_list=numbers)
+
+# ----------------------------------------------------------------------
+# 606-列表解析裡面還有列表解析
+
+def compute(num_list):
+    for rows in num_list:
+
+        for cols in rows:
+            print("%4d" % cols, end='')
+
+        print("")
+
+row = int(input("請輸入您要的二維list有多少列: "))
+column = int(input("請輸入您要的二維list有多少行: "))
+
+numbers = [[c-r for c in range(0, column)] for r in range(0, row)]
+
+compute(num_list=numbers)
+# ----------------------------------------------------------------------
+# 607
+students = ["1st", "2nd", "3rd"]
+grades = [[0 for score in range(0, 5)] for student in range(0, 3)]
+
+for stu in range(0, 3):
+    print("The %s student: " % students[stu])
+    for score in range(0, 5):
+        grades[stu][score] = int(input("請輸入第%d個分數: " % (score + 1)))
+
+for student in range(0, len(grades)):
+    print("Student %d" % (student + 1))
+    print("#個人總分Sum = %d" % sum(grades[student]))
+    print("#個人平均Average = %.2f"
+          % (sum(grades[student]) / len(grades[student])))
+# ----------------------------------------------------------------------
+# 608
+numbers = []
+for n in range(0, 9):
+    numbers.append(int(input("請輸入(%d, %d)" % (n // 3, n % 3))))  #★
+
+max_number = max(numbers)
+print("Index of the largest number %d is: (%d, %d)"
+      % (max_number,
+         numbers.index(max_number) // 3,
+         numbers.index(max_number) % 3))
+
+min_number = min(numbers)
+min_index = numbers.index(min_number)
+print("Index of the smallest number %d is: (%d, %d)"
+      % (min_number, min_index // 3, min_index % 3))  # 這比上面優雅
+
+
+
+# ----------------------------------------------------------------------
+# 609
+matrix_1 = [[0 for column in range(0, 2)] for row in range(0, 2)]
+matrix_2 = [[0 for column in range(0, 2)] for row in range(0, 2)]
+matrix_3 = [[0 for column in range(0, 2)] for row in range(0, 2)]
+
+print("Enter matrix 1: ")
+for row in range(0, 2):
+
+    for column in range(0, 2):
+        matrix_1[row][column] = int(input("[%d, %d]"
+                                          % (row + 1, column + 1)))
+
+print("Enter matrix 2: ")
+for row in range(0, 2):
+
+    for column in range(0, 2):
+        matrix_2[row][column] = int(input("[%d, %d]"
+                                          % (row + 1, column + 1)))
+
+for row in range(0, 2):  # 計算matrix_3
+
+    for column in range(0, 2):
+        matrix_3[row][column] = matrix_1[row][column] + matrix_2[row][column]
+
+print("Matrix 1: ")
+for row in range(0, len(matrix_1)):
+
+    print("**", end='')
+    for column in range(0, len(matrix_1[row])):
+        print(matrix_1[row][column], end=' ')
+    print("**")
+
+print("Matrix 2: ")
+for row in range(0, len(matrix_2)):
+
+    print("**", end='')
+    for column in range(0, len(matrix_2[row])):
+        print(matrix_2[row][column], end=' ')
+    print("**")
+
+print("Sum of 2 matrices: ")
+for row in range(0, len(matrix_3)):
+
+    print("**", end='')
+    for column in range(0, len(matrix_3[row])):
+        print(matrix_3[row][column], end=' ')
+    print("**")
+
+
+# ----------------------------------------------------------------------
+# 610
+temperatures = []
+
+for week in range(1, 5):
+    print("Week %d: " % week)
+    for day in range(1, 4):
+        temperatures.append(float(input("Day %d: " % day)))
+
+avg = sum(temperatures) / len(temperatures)
+highest_value = max(temperatures)
+lowest_value = min(temperatures)
+
+print("Average: %.2f" % avg)
+print("Highest: %.1f" % highest_value)
+print("Lowest: %.1f" % lowest_value)
+# ----------------------------------------------------------------------
+# 702
+# ----------------------------------------------------------------------
+# 704
+# ----------------------------------------------------------------------
+# 705
+# ----------------------------------------------------------------------
+# 706
+# ----------------------------------------------------------------------
+# 707
+# ----------------------------------------------------------------------
+# 708

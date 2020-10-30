@@ -46,6 +46,7 @@ list_2 = []
 message = "請輸入整數: "
 message += "\n(輸入'-9999'以離開程序)"
 
+# ★list_1跟list_2是兩個不一樣的物件所以不能直接寫在迴圈裡面來做
 print("Create tuple1: ")
 while True:
     number = int(input(message))
@@ -71,7 +72,7 @@ tuple_2 = tuple(list_2)
 
 print("Combined tuple before sorting: " + str(tuple_1 + tuple_2))
 print("Combined list after sorting: " + str(sorted(tuple_1 + tuple_2)))
-# 印出來的時候可以直接加起來還
+# 印出來的時候可以直接加起來
 
 # ----------------------------------------------------------------------
 # 驗證自己想法

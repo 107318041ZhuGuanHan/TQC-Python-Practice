@@ -22,11 +22,11 @@ for i in range(0, 9):
 
 state_2_in_1 = set_2.issubset(set_1)
 # ★用issubset()來判斷set_2是否為set_1的子集合
-# 右邊要被拿來判斷的物件擺前面，比較的基準擺後面
+# 等號(=) 右邊要被拿來判斷的物件擺前面，比較的基準擺後面
 
 state_3_super_1 = set_3.issuperset(set_1)
 # ★用issuperset()來判斷set_3是否為set_1的子集合
-# 右邊要被拿來判斷的物件擺前面，比較的基準擺後面
+# 等號(=) 右邊要被拿來判斷的物件擺前面，比較的基準擺後面
 
 print("Set1: " + str(set_1))
 print("Set2: " + str(set_2))

@@ -500,14 +500,165 @@ print("Average: %.2f" % avg)
 print("Highest: %.1f" % highest_value)
 print("Lowest: %.1f" % lowest_value)
 # ----------------------------------------------------------------------
-# 702
+# 701 -> 實驗轉成tuple再轉回list
+numbers = []
+message = "請輸入整數: "
+message += "\n若要離開請輸入'-9999'"
+
+while True:
+    number_in = int(input(message))
+
+    if number_in == -9999:
+        break
+
+    numbers.append(number_in)
+
+numbers = tuple(numbers)
+
+# numbers = list(numbers)  # -> 直接用本來的變數這樣轉回去也可以 -> ★可以互轉
+
+# numbers_test = list(numbers) -> 用一個新的變數來接OK
+# numbers_test == [-4, 0, 37, 19, 26, -43, 9]
+
+print("Tuple: " + str(numbers))
+print("Length: %d" % len(numbers))
+print("Max: %d" % max(numbers))
+print("Min: %d" % min(numbers))
+print("Sum: %d" % sum(numbers))
 # ----------------------------------------------------------------------
-# 704
+# 702
+list_1 = []
+list_2 = []
+message = "請輸入數字(整數): "
+message += "\n若要結束這個部分請輸入'-9999'"
+
+print("Create tuple1: ")
+while True:
+    number_in = int(input(message))
+
+    if number_in == -9999:
+        break
+
+    list_1.append(number_in)
+tuple_1 = tuple(list_1)
+
+print("Create tuple2: ")
+while True:
+    number_in = int(input(message))
+
+    if number_in == -9999:
+        break
+
+    list_2.append(number_in)
+tuple_2 = tuple(list_2)
+
+tuple_combine = tuple_1 + tuple_2
+
+print("Combined tuple before sorting: " + str(tuple_combine))
+print("Combined list after sorting: " + str(sorted(tuple_combine)))
+
+# ----------------------------------------------------------------------
+# 704  測試set與list互轉 -> 也沒問題
+numbers = set()
+
+message = "請輸入整數: "
+message += "\n若要離開請輸入'-9999'"
+
+while True:
+    number_in = int(input(message))
+
+    if number_in == -9999:
+
+        if len(numbers) == 0:
+            print("請輸入至少一個數字，不然我們會很麻煩！")
+            continue
+
+        else:
+            break
+
+    numbers.add(number_in)
+
+# numbers = list(numbers)  #也是可以這樣子直接互轉
+# numbers = set(numbers)   # -> ★可以互轉
+#
+# number_test = list(numbers)
+# number_test = set(numbers)
+
+print("Length: %d" % len(numbers))
+print("Max: %d" % max(numbers))
+print("Min: %d" % min(numbers))
+print("Sum: %d" % sum(numbers))
 # ----------------------------------------------------------------------
 # 705
+set_1 = set()
+set_2 = set()
+set_3 = set()
+
+print("Input to set1: ")
+for n in range(0, 5):
+    set_1.add(int(input("請輸入第%d個整數: " % (n + 1))))
+
+print("Input to set2: ")
+for n in range(0, 3):
+    set_2.add(int(input("請輸入第%d個整數: " % (n + 1))))
+
+print("Input to set3: ")
+for n in range(0, 9):
+    set_3.add(int(input("請輸入第%d個整數: " % (n + 1))))
+
+print("Set1: " + str(set_1))
+print("Set2: " + str(set_2))
+print("Set3: " + str(set_3))
+
+print("set2 is subset of set1: " + str(set_2.issubset(set_1)))
+print("set3 is superset of set1: " + str(set_3.issuperset(set_1)))
 # ----------------------------------------------------------------------
 # 706
+alphabet = set("abcdefghijklmnopqrstuvwxyz")
+
+time = int(input("請輸入您欲測試幾筆資料: "))
+for t in range(0, time):
+    string_set = set(input("請輸入第%d筆資料: " % (t + 1)).lower())
+
+    if ' ' in string_set:
+        string_set.remove(' ')
+
+    true_false = string_set == alphabet
+    print("全字母句: " + str(true_false))
+
 # ----------------------------------------------------------------------
 # 707
+subject_x = set()
+subject_y = set()
+
+message = "請輸入科目: "
+message += "\n若要離開此部分程序請輸入'end'"
+
+print("Enter group X's subjects: ")
+while True:
+    string_in = input(message)
+
+    if string_in == 'end':
+        break
+
+    subject_x.add(string_in)
+
+print("Enter group Y's subjects: ")
+while True:
+    string_in = input(message)
+
+    if string_in == 'end':
+        break
+
+    subject_y.add(string_in)
+
+print("Group X: " + str(sorted(subject_x)))
+print("Group Y: " + str(sorted(subject_y)))
+
+print("X組和Y組的所有科目: " + str(sorted((subject_x | subject_y))))
+print("共同科目: " + str(sorted(subject_x & subject_y)))
+print("Y組有但X組沒有的科目: " + str(sorted(subject_y - subject_x)))
+print("X組和Y組彼此沒有的科目（不包含相同科目）" + str(sorted(subject_x ^ subject_y)))
+
 # ----------------------------------------------------------------------
 # 708

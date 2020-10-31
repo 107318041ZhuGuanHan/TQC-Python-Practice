@@ -19,7 +19,7 @@ print("Average = " + str(avg))
 numbers_list = input("請輸入五個數字，以空白隔開: ").split(' ')
 
 for i in range(0, len(numbers_list)):
-    numbers_list[i] = int(numbers_list[i])  # 把每個字串元素轉換成整數元素
+    numbers_list[i] = int(numbers_list[i])  # 把每個字串元素轉換成整數元素 -> ★可以直接這樣子轉
 
 total = sum(numbers_list)
 avg = total / len(numbers_list)

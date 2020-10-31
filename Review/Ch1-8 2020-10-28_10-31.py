@@ -662,3 +662,178 @@ print("X組和Y組彼此沒有的科目（不包含相同科目）" + str(sorted
 
 # ----------------------------------------------------------------------
 # 708
+dict_1 = {}
+dict_2 = {}
+
+print("Create dict1: ")
+while True:
+    key = input("Key: ")
+
+    if key == 'end':
+        break
+
+    value = input("Value: ")
+
+    if value == 'end':
+        break
+
+    dict_1[key] = value
+
+print("Create dict2: ")
+while True:
+    key = input("Key: ")
+
+    if key == 'end':
+        break
+
+    value = input("Value: ")
+
+    if value == 'end':
+        break
+
+    dict_2[key] = value
+
+dict_combine = {**dict_1, **dict_2}
+
+
+# for key, value in sorted(dict_combine).items(): -> ★不是這樣寫喔!
+for key, value in sorted(dict_combine.items()):
+    print(key + ": " + value)
+
+# ----------------------------------------------------------------------
+# 801 - i
+string = input("請輸入1個字串: ")
+for i in range(0, len(string)):
+    print("Index of '%s': %d" % (string[i], i))
+# ----------------------------------------------------------------------
+# 801 - .index()
+string = input("請輸入1個字串: ")
+for s in string:
+    print("Index of '%s': %d" % (s, string.index(s)))
+# ----------------------------------------------------------------------
+# 802
+string = input("請輸入字串: ")
+
+total = 0
+for s in string:
+    print("ASCII code for '%s' is %d" % (s, ord(s)))
+    total += ord(s)
+
+print("所有字元的ASCII碼總合 = " + str(total))
+# ----------------------------------------------------------------------
+# 803
+string_list = input("請輸入一個句子(至少有五個詞，以空白隔開): ").split(' ')
+for string in string_list[-3:]:
+    print(string, end=' ')
+# ----------------------------------------------------------------------
+# 805
+string = input("請輸入一個長度為6的字串: ")
+
+print("|%-10s|" % string)
+print("|%s|" % string.center(10))
+print("|%10s|" % string)
+# ----------------------------------------------------------------------
+# 806 - 不要用function的寫法
+string = input("請輸入一個字串: ")
+char = input("請輸入一個字元: ")
+
+print("%s occurs %d time(s)" % (char, string.count(char)))
+# ----------------------------------------------------------------------
+# 806 - 用function的寫法
+def compute(string, char):
+
+    return string.count(char)
+
+
+string = input("請輸入一個字串: ")
+char = input("請輸入一個字元: ")
+
+times = compute(string=string, char=char)
+print("%s occurs %d time(s)" % (char, times))
+
+# ----------------------------------------------------------------------
+# 807 - 用變數來儲存
+numbers = (input("請輸入一字串，字串內容為五個數字，以空白隔開: ")).split(' ')
+
+total = 0
+for number in numbers:
+    total += int(number)
+
+avg = total / len(numbers)
+
+print("Total = %d" % total)
+print("Average = %.1f" % avg)
+# ----------------------------------------------------------------------
+# 807 - 用修改list的方式
+numbers = input("請輸入一字串，字串內容為五個數字，以空白隔開: ").split(' ')
+
+for n in range(0, len(numbers)):
+    numbers[n] = int(numbers[n])
+
+total = sum(numbers)
+avg = total / len(numbers)
+
+print("Total = %d" % total)
+print("Average = %.1f" % avg)
+# ----------------------------------------------------------------------
+# 808
+ssn_list = input("請輸入社會安全碼SSN: ").split('-')
+
+ssn = True  # 假設初步判斷格式會是正確的
+
+for number in ssn_list:
+
+    if not number.isdigit():  # 判斷到了不正確的格式
+
+        ssn = False  # 就改成False
+
+state_1 = len(ssn_list[0]) == 3
+state_2 = len(ssn_list[1]) == 2
+state_3 = len(ssn_list[2]) == 4
+
+if ssn:  # 初步的判斷
+
+    if state_1 and state_2 and state_3:  # 再更進一步的判斷
+        print("Valid SSN")
+
+    else:
+        print("Invalid SSN")
+
+else:
+    print("Invalid SSN")
+# ----------------------------------------------------------------------
+# 809
+password = input("請輸入密碼: ")
+
+length = len(password) >= 8
+eng_num_only = password.isalnum()  # ★直接一口氣看字串裡面的每一個字元
+one_upper = False  # 預設是沒半個大寫，有的話才改成True
+
+for s in password:
+
+    if s.isupper():
+        one_upper = True
+
+if length and eng_num_only and one_upper:
+    print("Valid password")
+
+else:
+    print("Invalid password")
+
+# ----------------------------------------------------------------------
+# 810
+
+k = int(input("請輸入正整數k，代表有k筆測試資料: "))
+
+for time in range(0, k):
+    numbers = input("請輸入第%d串數字(以空白隔開): " % (time + 1)).split(' ')
+
+    for n in range(0, len(numbers)):
+        numbers[n] = float(numbers[n])
+
+    ans = max(numbers) - min(numbers)
+
+    print("Max = %.2f" % max(numbers))
+    print("Min = %.2f" % min(numbers))
+    print("Max - Min = %.2f" % ans)
+    

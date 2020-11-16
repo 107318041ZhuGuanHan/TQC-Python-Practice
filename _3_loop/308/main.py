@@ -20,7 +20,7 @@ num_of_data = int(input("請輸入你等等總共會輸入幾筆資料: "))
 for n_data in range(1, num_of_data+1):
     str_data = input("請輸入你要的數字資料，我將為您將每一位的數字進行加總: ")
     total = 0 # 用一個變數來計算加總的過程
-    for n in range(1, len(str_data)+1):
-        total += n # ★在這裡進行加總，就不用建立一堆list只為了要使用sum()的function了
+    for n in range(0, len(str_data)):
+        total += int(str_data[n]) # ★在這裡進行加總，就不用建立一堆list只為了要使用sum()的function了
 
     print("Sum of all digits of " + str_data + " is " + str(total))

@@ -579,17 +579,89 @@ for s in string:
 print("Sum of ASCII = ", total_ascii)
 # ----------------------------------------------------------------------
 # 803
-string = input()
+string_list = input("輸入一個句子（至少有五個詞，以空白隔開）: ").split(' ')
+
+for string in string_list[-3:]:
+    print(string, end=' ')
 # ----------------------------------------------------------------------
 # 805
+string = input("請輸入一個字串: ")
+
+print("|%-10s|" % string)
+print("|%s|" % string.center(10))
+print("|%10s|" % string)
 # ----------------------------------------------------------------------
 # 806
+def compute(string, char):
+    return string.count(char)
+
+string = input("請輸入一個句子: ")
+char = input("請輸入您要計算出現次數的字元: ")
+
+count = compute(string=string, char=char)
+print("%s occur %d time(s)" % (char, count))
 # ----------------------------------------------------------------------
 # 808
+while True:
+    ssn = input("輸入一個社會安全碼SSN")
+    ssn_list = ssn.split('-')
+    valid_ssn = True  # 先假設格式是正確的
+
+    for number in ssn_list:
+        if not number.isnumeric():
+            valid_ssn = False  # 遇到格式不正確就把它改成False
+
+    len_1 = len(ssn_list[0]) == 3
+    len_2 = len(ssn_list[1]) == 2
+    len_3 = len(ssn_list[2]) == 4
+    if not (len_1 and len_2 and len_3):
+        valid_ssn = False
+
+    if valid_ssn:
+        print("Valid SSN")
+
+    else:
+        print("Invalid SSN")
+
 # ----------------------------------------------------------------------
 # 809
+password = input("請輸入密碼: ")
+
+if len(password) >= 8:
+    condition_a = True
+else:
+    condition_a = False
+
+if password.isalnum():
+    condition_b = True
+else:
+    condition_b = False
+
+condition_c = False
+for p in password:
+    if p.isupper():
+        condition_c = True
+
+condition = condition_a and condition_b and condition_c
+
+if condition:
+    print("Valid password")
+
+else:
+    print("Invalid password")
 # ----------------------------------------------------------------------
 # 810
+k = int(input("請輸入資料筆數(測試次數): "))
+
+for n in range(0, k):
+
+    numbers = input("請輸入資料(以空格隔開): ").split(' ')
+
+    for i in range(0, len(numbers)):
+        numbers[i] = float(numbers[i])
+
+    ans = max(numbers) - min(numbers)
+    print("Max - Min = %.2f" % ans)
 
 
 

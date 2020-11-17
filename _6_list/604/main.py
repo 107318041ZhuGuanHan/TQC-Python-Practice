@@ -10,7 +10,7 @@ for n in numbers:
 
 for key, value in number_counts.items():
 
-    if value == max(number_counts.values()): # 再這邊先不考慮沒有眾數或是多個眾數的問題
+    if value == max(number_counts.values()): # 在這邊先不考慮沒有眾數或是多個眾數的問題
         print("眾數 = " + str(key))
         print(str(key) + " 出現 " + str(value) + " 次。")
 
